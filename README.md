@@ -71,11 +71,14 @@ For Azure OpenAI key, establish the connection by running the command, using the
 pf connection create --file ./my_chatbot/azure_openai.yaml --set api_key=<your_api_key> api_base=<your_api_base> --name open_ai_connection
 ```
 
+And then, install promptflow-azure:
+```sh
+pip install promptflow promptflow-azure
+```
+
 **Chat with your flow**
 
-In the `my_chatbot` folder, there's a `flow.dag.yaml` file that outlines the flow, including inputs/outputs, nodes,  connection, and the LLM model, etc
-
-> Note that in the `chat` node, we're using a connection named `open_ai_connection` (specified in `connection` field) and the `gpt-35-turbo` model (specified in `deployment_name` field). The deployment_name filed is to specify the OpenAI model, or the Azure OpenAI deployment resource.
+In the `my_chatbot` folder, open the `flow.dag.yaml` file and change deployment_name to the name of your deployment.
 
 Interact with your chatbot by running: (press `Ctrl + C` to end the session)
 
