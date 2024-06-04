@@ -57,7 +57,8 @@ More common scenario is the application has complicated code structure, and deve
 See the **[math_to_code](./math_to_code.py)** example on how to use `@trace`.
 
 ```python
-from promptflow.tracing import trace
+from promptflow.tracing import trace, start_trace
+start_trace()
 # trace your function
 @trace
 def code_gen(client: AzureOpenAI, question: str) -> str:
